@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import NavigationLink from "./LoaderComponent";
 
 interface Props {
    title: string;
@@ -12,7 +12,7 @@ interface Props {
 
 export const EventCard = ({ title, image, slug, location, date, time }: Props) => {
    return (
-      <Link href={`/events/${slug}`} id="event-card">
+      <NavigationLink href={`/events/${slug}`} id="event-card">
          <Image src={image} alt={title} width={410} height={300} className="poster" />
 
          <div className="flex flex-row gap-2">
@@ -32,6 +32,6 @@ export const EventCard = ({ title, image, slug, location, date, time }: Props) =
                <p>{time}</p>
             </div>
          </div>
-      </Link>
+      </NavigationLink>
    )
 }
